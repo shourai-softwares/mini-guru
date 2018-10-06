@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,7 +9,7 @@ import { RNCamera } from 'react-native-camera';
 import Canvas, { Image } from 'react-native-canvas';
 import ImagePicker from 'react-native-image-picker';
 
-export default class App extends Component {
+class CameraPage extends PureComponent {
   state = {};
 
   handleCanvas = (canvas) => {
@@ -35,17 +35,17 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         {/*<RNCamera*/}
-          {/*ref={ref => {*/}
-            {/*this.camera = ref;*/}
-          {/*}}*/}
-          {/*style = {styles.preview}*/}
-          {/*type={RNCamera.Constants.Type.back}*/}
-          {/*flashMode={RNCamera.Constants.FlashMode.off}*/}
-          {/*permissionDialogTitle={'Permission to use camera'}*/}
-          {/*permissionDialogMessage={'We need your permission to use your camera phone'}*/}
-          {/*onGoogleVisionBarcodesDetected={({ barcodes }) => {*/}
-            {/*console.log(barcodes)*/}
-          {/*}}*/}
+        {/*ref={ref => {*/}
+        {/*this.camera = ref;*/}
+        {/*}}*/}
+        {/*style = {styles.preview}*/}
+        {/*type={RNCamera.Constants.Type.back}*/}
+        {/*flashMode={RNCamera.Constants.FlashMode.off}*/}
+        {/*permissionDialogTitle={'Permission to use camera'}*/}
+        {/*permissionDialogMessage={'We need your permission to use your camera phone'}*/}
+        {/*onGoogleVisionBarcodesDetected={({ barcodes }) => {*/}
+        {/*console.log(barcodes)*/}
+        {/*}}*/}
         {/*/>*/}
         <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center',}}>
           <TouchableOpacity
@@ -101,3 +101,5 @@ const styles = StyleSheet.create({
     margin: 20
   }
 });
+
+export default CameraPage;
