@@ -4,8 +4,19 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --cache --ext .jsx,js --ignore-path .gitignore",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint:staged": "lint-staged",
     "test": "jest"
   },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --ext .jsx,js --ignore-path .gitignore --max-warnings=0",
+      "jest --bail --passWithNoTests"
+    ]
+  },
+  "pre-commit": "lint:staged",
   "dependencies": {
     "@babel/runtime": "^7.1.2",
     "react": "16.5.0",
@@ -16,8 +27,20 @@
     "react-navigation": "^2.17.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.0.0",
     "babel-jest": "23.6.0",
+    "eslint": "^3.10.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-import-resolver-meteor": "^0.3.3",
+    "eslint-plugin-babel": "^3.3.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-prettier": "^2.5.0",
+    "eslint-plugin-react": "^6.7.1",
     "jest": "23.6.0",
+    "jest-cli": "^23.1.0",
+    "lint-staged": "^7.1.0",
+    "pre-commit": "^1.2.2",
     "metro-react-native-babel-preset": "0.47.0",
     "react-test-renderer": "16.5.0"
   },
