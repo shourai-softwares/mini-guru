@@ -26,10 +26,13 @@ class CameraScreen extends PureComponent {
 
   takePicture = async () => {
     ImagePicker.showImagePicker({
-      title: 'Select Avatar',
+      title: 'Foto Da Língua',
+      cancelButtonTitle: 'Cancelar',
+      takePhotoButtonTitle: 'Tirar Foto',
+      chooseFromLibraryButtonTitle: 'Galeria',
       storageOptions: {
         skipBackup: true,
-        path: 'images',
+        path: 'Mini Guru',
       },
     }, (response) => {
       if (response.didCancel) {
